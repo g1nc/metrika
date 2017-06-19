@@ -9,9 +9,9 @@ module Metrika
           self.get(self.send("counter_stat_traffic_#{report}_path"), params.merge(:id => id))
         end
 
-        define_method "counter_stat_traffic_#{report}_path" do                
-          "/stat/traffic/#{report}"      
-        end        
+        define_method "counter_stat_traffic_#{report}_path" do
+          "/stat/traffic/#{report}"
+        end
       end
 
       # Sources
@@ -22,9 +22,9 @@ module Metrika
           self.get(self.send("counter_stat_sources_#{report}_path"), params.merge(:id => id))
         end
 
-        define_method "counter_stat_sources_#{report}_path" do                
-          "/stat/sources/#{report}"      
-        end        
+        define_method "counter_stat_sources_#{report}_path" do
+          "/stat/sources/#{report}"
+        end
       end
 
       # Content
@@ -50,7 +50,7 @@ module Metrika
       def counter_stat_geo_path
         "/stat/geo"
       end
-      
+
       # Interest
       def get_counter_stat_interest(id, params = {})
         params = self.format_params(params)
@@ -62,7 +62,7 @@ module Metrika
         "/stat/interest"
       end
 
-      # Demography      
+      # Demography
       %w( age_gender structure ).each do |report|
         define_method "get_counter_stat_demography_#{report}" do | id, params = {} |
           params = self.format_params(params)
@@ -86,7 +86,7 @@ module Metrika
         define_method "counter_stat_tech_#{report}_path" do
           "/stat/tech/#{report}"
         end
-      end      
+      end
     end
   end
 end
